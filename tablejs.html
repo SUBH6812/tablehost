@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;padding: 0;
+		}
+		th{
+			background-color: rgba(0,0,0,0.5);color:#fff;
+			padding: 20px;border:2px solid black;
+		}	
+		td{
+			background-color: rgba(0,0,0,0.2);color:rgba(255,0,0,0.8);
+			padding: 20px;border:2px solid black;
+		}
+		table{text-align: center;border:2px solid black;margin:20px auto;}
+		
+	</style>
+</head>
+<body>
+	<p id="demo"></p>
+	<label>Which country you want to the result :</label>
+	<select id="demo2">
+		<option>car</option>
+		<option>bus</option>
+		<option>train</option>
+		<option>cycle</option>
+	</select>
+	<p id="demo3"></p>
+<script type="text/javascript">
+	var nw=['car', 'bus', 'train' ,'cycle'];
+	var age=[23,45,56,77];
+	var dob=['d3','f4','h6','k8']
+	var i=0;
+	var text=document.getElementById("demo");
+//var text =" ";
+var table = '<table><thead><tr><th>S.NO</th><th>COUNTRY</th><th>TotalConfirmed</th><th>TotalRecovered</th></tr></thead><tbody>';
+for(i;i<age.length;i++){
+	table += '<tr><td>' + (i+1) + '</td><td>' + nw[i]+ '</td><td>' +age[i]+ '</td><td>' +dob[i]+ '</td></tr>';
+}
+table += '</tbody></table>';
+text.innerHTML = table;
+console.log(nw);
+</script>
+<script type="text/javascript">
+	var i=0;
+	var x=document.getElementById("demo2");
+	x.onchange=function(){
+		for(i;i<nw.length;i++){
+if(x.value===nw[i]){
+	document.getElementById("demo3").innerHTML="COUNTRY  :"+nw[i]+"<br>"+	"TotalConfirmed  :"+age[i]+"<br>"+	"TotalRecovered  :"+dob[i];
+}
+}
+}	
+</script>
+</body>
+</html>
